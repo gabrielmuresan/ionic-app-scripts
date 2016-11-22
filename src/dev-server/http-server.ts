@@ -79,6 +79,7 @@ function serveIndex(req: express.Request, res: express.Response)  {
  * http responder for cordova.js file
  */
 function serveCordovaJS(req: express.Request, res: express.Response) {
+  const cordovaFileName = path.join(config.wwwDir, 'cordova.js');
   res.set('Content-Type', 'application/javascript');
-  res.send('// mock cordova file during development');
+  res.send(cordovaFileName);
 }
